@@ -20,10 +20,10 @@ class ReviewValidationTest extends TestCase
 
         // 1. Persiapan data
         
-        // Buat buyer
+        // Membuat buyer
         $buyer = User::factory()->create(['role' => 'user']);
 
-        // Buat seller  
+        // Membuat seller  
         $sellerUser = User::factory()->create(['role' => 'seller']);
         $seller = Seller::create([
             'user_id' => $sellerUser->id,
@@ -45,14 +45,14 @@ class ReviewValidationTest extends TestCase
             'province' => 'Jawa Tengah',
         ]);
 
-        // Buat category
+        // Membuat category
         $category = Category::create([
             'name' => 'Elektronik',
             'slug' => 'elektronik',
             'is_active' => true,
         ]);
 
-        // Buat produk
+        // Membuat produk
         $product = Product::create([
             'seller_id' => $seller->id,
             'category_id' => $category->id,
@@ -71,7 +71,7 @@ class ReviewValidationTest extends TestCase
             'total_reviews' => 0,
         ]);
 
-        // Membuat teks komentar super panjang
+        // MemMembuat teks komentar super panjang
         $longComment = str_repeat('A', 3000);
 
         // 2. Input data dengan komentar super panjang
